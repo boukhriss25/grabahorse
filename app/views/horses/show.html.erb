@@ -1,25 +1,35 @@
 
+<!--   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  </div> -->
 
-<div class="show-container">
-  <%= image_tag "https://www.airc.ie/wp-content/uploads/horse-web.jpg", alt: "alttext" %>
-
-  <%= @horse.name %>
-  <br>
-  <%= @horse.location %>
-  <br>
-  <%= @horse.price %>
-  <br>
-  <%= @horse.description %>
-  <br>
-  <%= @horse.image %>
-  <br>
-  Owner: <%= @horse.user.email %>
-
-  <%= link_to 'Delete Horse', horse_path(@horse), method: :delete, data: {confirm: "Are you sure?"} %>
-
-  <%= link_to 'Edit horse', edit_horse_path(@horse)  %>
-
-  <%= link_to 'Back to Search Results', horses_path %>
+  <div class="banner">
+    <%= cl_image_tag @horse.image, height: 300, crop: :fill %>
+  </div>
 
 
-</div>
+  <div class="container content-container">
+    <div class="infos">
+    <h3>Name:</h3>
+    <p><%= @horse.name %></p>
+    <h3>Location:</h3>
+    <p><%= @horse.location %></p>
+    <h3>Price:</h3>
+    <p><%= @horse.price %></p>
+    <h3>Owner:</h3>
+    <p><%= @horse.user.email %></p>
+    </div>
+
+    <div>
+      <h3>Description</h3>
+      <p><%= @horse.description %></p>
+
+    </div>
+  </div>
+
+  <div class="container buttons">
+    <div class="buttons-owner">
+      <%= link_to 'Delete Horse', horse_path(@horse), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-dark mr-2"%>
+      <%= link_to 'Edit horse', edit_horse_path(@horse), class: "btn btn-outline-dark mr-2"  %>
+    </div>
+    <%= link_to 'Back to Search Results', horses_path, class: "btn btn-outline-dark mr-2" %>
+  </div>
