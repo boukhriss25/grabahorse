@@ -1,6 +1,6 @@
 <h1>Horses#New</h1>
 
-<%= simple_form_for [@user, @horse] do |f| %>
+<%= simple_form_for @horse do |f| %>
   <%= f.input :name %>
   <%= f.input :location %>
   <%= f.input :price %>
