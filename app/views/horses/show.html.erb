@@ -1,9 +1,5 @@
 
-<!--   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  </div> -->
-
-  <div class="banner">
-    <%= cl_image_tag @horse.image, height: 300, crop: :fill %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @horse.image %>);">
   </div>
 
 
@@ -19,10 +15,9 @@
     <p><%= @horse.user.email %></p>
     </div>
 
-    <div>
+    <div class="description">
       <h3>Description</h3>
       <p><%= @horse.description %></p>
-
     </div>
   </div>
 

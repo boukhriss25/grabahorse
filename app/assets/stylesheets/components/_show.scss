@@ -2,4 +2,13 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+
+  .infos {
+    width: 60%;
+  }
+
+  .description {
+    flex-grow: 1;
+  }
 }
+
