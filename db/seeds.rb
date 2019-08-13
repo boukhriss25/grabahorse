@@ -22,14 +22,14 @@ puts 'Cleaning database of all horses...'
 Horse.destroy_all
 puts 'Initiating horses seed...'
 
-20.times do
-  Horse.create(
-    name: Faker::Creature::Horse.name,
-    location: Faker::Address.city,
-    price: rand(25..75),
-    description: Faker::Coffee.notes,
-    user: User.all.sample
-    )
-end
+# 20.times do
+#   Horse.create(
+#     name: Faker::Creature::Horse.name,
+#     location: Faker::Address.city,
+#     price: rand(25..75),
+#     description: Faker::Coffee.notes,
+#     user: User.all.sample
+#     )
+# end
 
 
