@@ -1,0 +1,15 @@
+<h1>Horses#Show</h1>
+
+<%= @horse.name %>
+<br>
+<%= @horse.location %>
+<br>
+<%= @horse.price %>
+<br>
+<%= @horse.description %>
+<br>
+<%= @horse.image %>
+<br>
+Owner: <%= @horse.user.name %>
+
+<% link_to 'Back to Search Results', root_path %>

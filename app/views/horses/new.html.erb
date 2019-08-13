@@ -1,0 +1,12 @@
+<h1>Horses#New</h1>
+
+<%= simple_form_for [@user, @horse] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%#= f.input :photo_cache, as: :hidden %>
+  <%= f.button :submit, class: "btn btn-info" %>
+<% end %>
+</div>

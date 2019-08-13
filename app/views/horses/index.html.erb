@@ -1,0 +1,9 @@
+<h1>Horses#Index</h1>
+
+<% @horses.each do |h| %>
+  <div class="card">
+  <%= h.name %>
+  <%= h.location %>
+  <%= h.price %>
+  </div>
+<% end %>
