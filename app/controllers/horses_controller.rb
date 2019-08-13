@@ -1,6 +1,6 @@
 class HorsesController < ApplicationController
   before_action :set_horse, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate, except: [:index, :show]
+  skip_before_action :authenticate, only: [:index, :show]
   def index
     @horses = Horse.all
   end
@@ -39,7 +39,7 @@ class HorsesController < ApplicationController
   private
 
   def set_horse
-    @horse = Horse.find(params[:id].to_i)
+    @horse = Horse.find(params[:id])
   end
 
   def horse_params
