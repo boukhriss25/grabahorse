@@ -28,7 +28,7 @@ puts 'Initiating horses seed...'
     location: Faker::Address.city,
     price: rand(25..75),
     description: Faker::Coffee.notes,
-    user_id: rand(1..15)
+    user: User.all.sample
     )
 end
 
