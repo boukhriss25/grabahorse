@@ -1,29 +1,57 @@
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @horse.image %>);">
+<!--   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @horse.image %>);">
+  </div> -->
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="horse-photo carousel-item active">
+      <%= cl_image_tag @horse.image %>
+    </div>
   </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
 
   <div class="container content-container">
     <div class="infos">
-    <h3>Name:</h3>
-    <p><%= @horse.name %></p>
-    <h3>Location:</h3>
-    <p><%= @horse.location %></p>
-    <h3>Price:</h3>
-    <p><%= @horse.price %></p>
-    <h3>Owner:</h3>
-    <p><%= @horse.user.email %></p>
+    <h1><%= @horse.name %></h3>
+      <div class="info-perso">
+        <div>
+          <h3>Owner:</h3>
+          <p><%= @horse.user.email %></p>
+        </div>
+          <%= image_tag "amine.jpg", alt: "avatar", class: "avatar-large" %>
+      </div>
+      <h3>Description:</h3>
+      <p><%= @horse.description %></p>
+      <h3>Price:</h3>
+      <p><%= @horse.price %></p>
     </div>
 
-    <div class="description">
-      <h3>Description</h3>
-      <p><%= @horse.description %></p>
+    <div class="location">
+      <h3>Location</h3>
+      <p><%= @horse.location %></p>
+      <%= image_tag "https://s3.eestatic.com/2017/10/11/social/La_Jungla_253487245_50033619_1024x576.jpg", alt: "map", class: "map" %>
     </div>
   </div>
 
   <div class="container buttons">
-    <div class="buttons-owner">
-      <%= link_to 'Delete Horse', horse_path(@horse), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-dark mr-2"%>
-      <%= link_to 'Edit horse', edit_horse_path(@horse), class: "btn btn-outline-dark mr-2"  %>
-    </div>
-    <%= link_to 'Back to Search Results', horses_path, class: "btn btn-outline-dark mr-2" %>
+    <% if current_user == @horse.user %>
+        <%= link_to 'Delete Horse', horse_path(@horse), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-dark mr-2"%>
+        <%= link_to 'Edit horse', edit_horse_path(@horse), class: "btn btn-outline-dark mr-2"  %>
+    <%else %>
+      <%= link_to 'Back to Search Results', horses_path, class: "btn btn-outline-dark mr-2" %>
+      <%= link_to 'Book', horses_path, class: "book btn mr-2" %>
+      <% end %>
   </div>
