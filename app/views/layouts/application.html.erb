@@ -10,9 +10,14 @@
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   <nav class="navbar navbar-white bg-white">
     <h5>
-    <i class="fas fa-horse mb-0" href="/home" style="color: #54C6EB; font-size: 32px"></i>
-  GRAB A HORSE</h5>
-</nav>
+      <i class="fas fa-horse mb-0" href="/home" style="color: #54C6EB; font-size: 32px"></i>
+    GRAB A HORSE</h5>
+    <div class="navbar right">
+    <a class="btn btn-outline-dark mr-3" href="/cocktails/2" >Add Horse</a>
+    <a class="btn btn-outline-dark mr-3" href="/cocktails/2" style="">Search</a>
+    <a class="btn btn-outline-dark mr-3" href="/cocktails/2">Login</a>
+    </div>
+  </nav>
 </head>
 <body>
   <%= yield %>
