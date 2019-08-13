@@ -1,20 +1,29 @@
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @horse.image %>);">
+  </div>
 
 
+  <div class="container content-container">
+    <div class="infos">
+    <h3>Name:</h3>
+    <p><%= @horse.name %></p>
+    <h3>Location:</h3>
+    <p><%= @horse.location %></p>
+    <h3>Price:</h3>
+    <p><%= @horse.price %></p>
+    <h3>Owner:</h3>
+    <p><%= @horse.user.email %></p>
+    </div>
 
-<%= @horse.name %>
-<br>
-<%= @horse.location %>
-<br>
-<%= @horse.price %>
-<br>
-<%= @horse.description %>
-<br>
-<%= @horse.image %>
-<br>
-Owner: <%= @horse.user.email %>
+    <div class="description">
+      <h3>Description</h3>
+      <p><%= @horse.description %></p>
+    </div>
+  </div>
 
-<%= link_to 'Delete Horse', horse_path(@horse), method: :delete, data: {confirm: "Are you sure?"} %>
-
-<%= link_to 'Edit horse', edit_horse_path(@horse)  %>
-
-<%= link_to 'Back to Search Results', horses_path %>
+  <div class="container buttons">
+    <div class="buttons-owner">
+      <%= link_to 'Delete Horse', horse_path(@horse), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-dark mr-2"%>
+      <%= link_to 'Edit horse', edit_horse_path(@horse), class: "btn btn-outline-dark mr-2"  %>
+    </div>
+    <%= link_to 'Back to Search Results', horses_path, class: "btn btn-outline-dark mr-2" %>
+  </div>

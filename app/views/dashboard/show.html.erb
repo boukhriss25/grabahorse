@@ -1,2 +1,30 @@
+
 <h1>Hi this is the show page of the dahsboard</h1>
 
+<div class= "container">
+
+  <div class="row">
+
+  <% @horses.each do |horse| %>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <%= cl_image_tag horse.image, height: 300, crop: :fill, class:"card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title"><%= horse.name %></h5>
+          <p class="card-text">
+            <%= horse.location %>
+            <br>
+            <%= horse.price %>
+            <br>
+            <%= horse.description %>
+          </p>
+          <%= link_to 'Show Horse', horse_path(horse), class: "btn btn-light"  %>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+
+  </div>
+
+</div>
