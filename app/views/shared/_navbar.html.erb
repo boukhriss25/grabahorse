@@ -8,8 +8,10 @@
       <a class="btn btn-outline-dark mr-2" href="/horses/new" style="border-radius: 4px;">Add Horse</a>
       <% if user_signed_in? %>
         <a class="btn" href="new_user_session">Login</a>
+        <%= class="btn" link_to "Login", new_user_session_path %>
       <% else %>
         <a class="btn" href="destroy_user_session">Log Out</a>
+        <%= class="btn" link_to "Log Out", new_user_session_path %>
       <% end %>
     </div>
   </nav>
