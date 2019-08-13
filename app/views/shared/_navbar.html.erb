@@ -1,0 +1,15 @@
+ <nav class="navbar navbar-white bg-white">
+    <h5>
+      <a href="/home">
+      <i class="fas fa-horse mb-0" style="color: #EE6055; font-size: 32px"></i></a>
+    GRAB A HORSE</h5>
+    <div class="navbar right">
+      <a class="btn btn-outline-dark mr-2" href="/horses" style="border-radius: 4px;">Search Horse</a>
+      <a class="btn btn-outline-dark mr-2" href="/horses/new" style="border-radius: 4px;">Add Horse</a>
+      <% if user_signed_in? %>
+        <a class="btn" href="new_user_session">Login</a>
+      <% else %>
+        <a class="btn" href="destroy_user_session">Log Out</a>
+      <% end %>
+    </div>
+  </nav>
