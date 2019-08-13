@@ -1,15 +1,14 @@
  <nav class="navbar navbar-white bg-white">
     <h5>
-      <a href="/home">
-      <i class="fas fa-horse mb-0" style="color: #EE6055; font-size: 32px"></i></a>
+      <i class="fas fa-horse mb-0" style="color: #EE6055; font-size: 32px"></i>
     GRAB A HORSE</h5>
     <div class="navbar right">
-      <a class="btn btn-outline-dark mr-2" href="/horses" style="border-radius: 4px;">Search Horse</a>
-      <a class="btn btn-outline-dark mr-2" href="/horses/new" style="border-radius: 4px;">Add Horse</a>
+      <%= link_to "Search Horse", horses_path, class: "btn btn-outline-dark mr-2" %>
+      <%= link_to "Add Horse", root_path, class: "btn btn-outline-dark mr-2" %>
       <% if user_signed_in? == false %>
-        <a class="btn"><%= link_to "Login", new_user_session_path %></a>
+        <%= link_to "Login", new_user_session_path, class: "btn"%>
       <% else %>
-        <a class="btn"><%= link_to "Log Out", destroy_user_session_path %></a>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn"%>
       <% end %>
     </div>
   </nav>
