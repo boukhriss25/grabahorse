@@ -10,6 +10,10 @@
 <br>
 <%= @horse.image %>
 <br>
-Owner: <%= @horse.user.name %>
+Owner: <%= @horse.user.email %>
 
-<% link_to 'Back to Search Results', root_path %>
+<%= link_to 'Delete Horse', horse_path(@horse), method: :delete, data: {confirm: "Are you sure?"} %>
+
+<%= link_to 'Edit horse', edit_horse_path(@horse)  %>
+
+<%= link_to 'Back to Search Results', horses_path %>
