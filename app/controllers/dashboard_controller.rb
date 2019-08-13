@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
   def show
-    @horses = Horse.where(horse.user == current_user)
+    @horses = Horse.where(user: current_user)
   end
 end

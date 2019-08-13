@@ -1,6 +1,7 @@
 class HorsesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_horse, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate, only: [:index, :show]
+
   def index
     @horses = Horse.all
   end
@@ -26,7 +27,7 @@ class HorsesController < ApplicationController
   end
 
   def update
-    if @horse.update(horse_strong_params)
+    if @horse.update(horse_params)
       redirect_to horse_path(@horse)
     else
       render :edit
@@ -34,6 +35,8 @@ class HorsesController < ApplicationController
   end
 
   def destroy
+    @horse.destroy
+    redirect_to root_path
   end
 
   private
