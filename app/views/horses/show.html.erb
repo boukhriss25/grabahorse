@@ -1,19 +1,25 @@
-<h1>Horses#Show</h1>
 
-<%= @horse.name %>
-<br>
-<%= @horse.location %>
-<br>
-<%= @horse.price %>
-<br>
-<%= @horse.description %>
-<br>
-<%= @horse.image %>
-<br>
-Owner: <%= @horse.user.email %>
 
-<%= link_to 'Delete Horse', horse_path(@horse), method: :delete, data: {confirm: "Are you sure?"} %>
+<div class="show-container">
+  <%= image_tag "https://www.airc.ie/wp-content/uploads/horse-web.jpg", alt: "alttext" %>
 
-<%= link_to 'Edit horse', edit_horse_path(@horse)  %>
+  <%= @horse.name %>
+  <br>
+  <%= @horse.location %>
+  <br>
+  <%= @horse.price %>
+  <br>
+  <%= @horse.description %>
+  <br>
+  <%= @horse.image %>
+  <br>
+  Owner: <%= @horse.user.email %>
 
-<%= link_to 'Back to Search Results', horses_path %>
+  <%= link_to 'Delete Horse', horse_path(@horse), method: :delete, data: {confirm: "Are you sure?"} %>
+
+  <%= link_to 'Edit horse', edit_horse_path(@horse)  %>
+
+  <%= link_to 'Back to Search Results', horses_path %>
+
+
+</div>
