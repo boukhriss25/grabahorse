@@ -1,5 +1,5 @@
 .wrapper{
-  background-image: url('horsebetter.jpg');
+  // background-image: url("<%= image_path 'horsebetter.jpg' %>");
   background-size: cover;
 }
 
@@ -9,5 +9,5 @@
 
 .devise-wrapper {
   background-size: cover;
-  background-image: url('https://carwad.net/sites/default/files/mustang-horse-111619-9557907.jpg');
+  // background-image: url('https://carwad.net/sites/default/files/mustang-horse-111619-9557907.jpg');
 }
