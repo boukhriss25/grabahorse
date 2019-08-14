@@ -1,12 +1,16 @@
 <div class="simpleform">
-<%= simple_form_for @horse do |f| %>
+  <%= simple_form_for @horse do |f| %>
   <%= f.input :name %>
   <%= f.input :location %>
   <%= f.input :price %>
   <%= f.input :description %>
-  <%= f.input :image %>
-  <%= f.input :image_cache, as: :hidden %>
-  <%= f.button :submit, class: "btn btn-info" %>
-<% end %>
+  <div class="d-flex justify-content-center">
+    <%= f.input :image %>
+    <%= f.input :image_cache, as: :hidden %>
+    <div class="mt-4"style="height: 40px;">
+      <%= f.button :submit, class: "btn btn-info" %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
