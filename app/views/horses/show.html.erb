@@ -25,24 +25,28 @@
 
   <div class="container content-container">
     <div class="infos">
-    <h1><%= @horse.name %></h3>
+    <h1><%= @horse.name %></h1>
+      <br>
       <div class="info-perso">
         <div>
-          <h3>Owner:</h3>
+          <h4>Owner</h4>
           <p><%= @horse.user.email %></p>
         </div>
           <%= image_tag "amine.jpg", alt: "avatar", class: "avatar-large" %>
       </div>
-      <h3>Description:</h3>
+      <h4>Description</h4>
       <p><%= @horse.description %></p>
-      <h3>Price:</h3>
-      <p><%= @horse.price %></p>
+      <h4>Price</h4>
+      <p><%= @horse.price %> € / day</p>
     </div>
 
     <div class="location">
-      <h3>Location</h3>
-      <p><%= @horse.location %></p>
+      <div class="location-title">
+        <h4>Location</h4>
+        <p><%= @horse.location %></p>
+      </div>
       <%= image_tag "https://s3.eestatic.com/2017/10/11/social/La_Jungla_253487245_50033619_1024x576.jpg", alt: "map", class: "map" %>
+      <p>Exact location information is provided after a booking is confirmed.</p>
     </div>
   </div>
 
