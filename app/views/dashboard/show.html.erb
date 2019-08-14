@@ -1,7 +1,5 @@
-
 <div class="container">
-<h1 class="header-dashboard">Dashboard</h1>
-<h3 class="header-dashboard">These are your listings:</h3>
+<h3 class="header-dashboard">These are your listings</h3>
     <% @horses.each do |horse| %>
       <div class="row">
         <div class="col">
@@ -21,7 +19,7 @@
               </p>
               </div>
               <div class="card-button">
-                 <%= link_to 'Show Horse', horse_path(horse), class: "btn btn-light"  %>
+                 <%= link_to 'Show Horse', horse_path(horse), class: "btn"%>
               </div>
             </div>
           </div>

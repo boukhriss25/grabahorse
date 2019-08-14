@@ -17,8 +17,9 @@ body {
 .card {
   height: 250px;
   background-color: #F8F8F8;
-  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
   border-radius: 3px;
+  margin: 6px;
   img {
     border-radius: 3px;
     object-fit: cover;
@@ -41,5 +42,13 @@ body {
 
 #map {
   display: block;
+}
+
+.search-card {
+  height: 200px;
+  background-color: #F8F8F8;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  border-radius: 3px;
+
 }
 
