@@ -1,9 +1,9 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Cabin:500|Old+Standard+TT&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
 
 // Define fonts for body and headers
-$body-font: 'Old Standard TT', serif;
-$headers-font: "Cabin", "sans-serif";
+$body-font: 'Roboto', lighter sans-serif;
+$headers-font: 'Roboto', bold sans-serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
