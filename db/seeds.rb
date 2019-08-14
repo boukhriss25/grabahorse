@@ -11,16 +11,14 @@ puts 'Cleaning database of all users...'
 User.destroy_all
 puts 'Initiating users seed...'
 
-15.times do
-  User.create(
-    email: Faker::Internet.email,
-    password: "password"
-    )
-end
+User.create(
+  email: "john@john.com",
+  password: "password"
+)
 
-puts 'Cleaning database of all horses...'
-Horse.destroy_all
-puts 'Initiating horses seed...'
+# puts 'Cleaning database of all horses...'
+# Horse.destroy_all
+# puts 'Initiating horses seed...'
 
 # 20.times do
 #   Horse.create(

@@ -1,19 +1,23 @@
-<div class= "card-container container">
-  <h1 style="text-align: center" class="m-3">Anyone take your fancy?</h1>
-  <div class="row d-flex justify-content-center">
-    <% @horses.each do |horse| %>
-    <div class="card">
-      <%= cl_image_tag horse.image, height: 150, crop: :scale %>
-      <div class="card-body">
-        <h5 class="card-title"><%= horse.name %></h5>
-        <p class="card-text">
-          <%= horse.location %>
-          <br>
-          <%= horse.price %> €
-        </p>
-          <%= link_to 'Show Horse', horse_path(horse), class: "btn btn-flat card-button" %>
+<!-- <div class= "container p-3"> -->
+  <h1 class="m-3 text-center">Anyone take your <strong>fancy?</strong></h1>
+  <div class="content">
+    <div class="cards">
+      <% @horses.each do |horse| %>
+      <div class="card">
+        <%= cl_image_tag horse.image, height: 150 %>
+        <div class="card-info mt-2">
+          <div class="card-details">
+            <div class="card-title ml-3">
+              <h5><%= horse.name %></h5>
+              <h6><%= horse.location %></h6>
+            </div>
+            <h6 class="mr-3"><%= horse.price %> €</h6>
+          </div>
+          <%= link_to 'View', horse_path(horse), class: "btn btn-flat card-button border" %>
+        </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
+    <%= image_tag "map-img.png", alt: "map", id: "map" %>
   </div>
-</div>
+  <!-- </div> -->
