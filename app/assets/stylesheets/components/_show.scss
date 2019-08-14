@@ -29,8 +29,10 @@
 }
 
 .horse-photo {
+  img {
   object-fit: cover;
   height: 400px;
+  }
 }
 
 p {
