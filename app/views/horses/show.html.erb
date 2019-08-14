@@ -27,7 +27,7 @@
 
 
   <div class="container content-container">
-    <div class="infos">
+    <div class="infos mt-3">
     <h1><%= @horse.name %></h1>
       <br>
       <div class="info-perso">
@@ -35,7 +35,9 @@
           <h4>Owner</h4>
           <p><%= @horse.user.email %></p>
         </div>
-          <%= image_tag "amine.jpg", alt: "avatar", class: "avatar-large" %>
+<!--         <div class="avatar">
+          <%#= image_tag "amine.jpg", alt: "avatar", class: "avatar-large" %>
+        </div> -->
       </div>
       <h4>Description</h4>
       <p><%= @horse.description %></p>
@@ -44,21 +46,21 @@
     </div>
 
     <div class="location">
-      <div class="location-title">
-        <h4>Location</h4>
-        <p><%= @horse.location %></p>
+      <div class="location-title mb-3">
+        <h4>Location:
+        <%= @horse.location %></h4>
       </div>
       <%= image_tag "https://s3.eestatic.com/2017/10/11/social/La_Jungla_253487245_50033619_1024x576.jpg", alt: "map", class: "map" %>
-      <p>Exact location information is provided after a booking is confirmed.</p>
+<!--       <p class="mt-2">Exact location information is provided after a booking is confirmed.</p> -->
     </div>
   </div>
 
-  <div class="container buttons">
+  <div class="container show-buttons mb-4">
     <% if current_user == @horse.user %>
         <%= link_to 'Delete Horse', horse_path(@horse), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-dark mr-2"%>
-        <%= link_to 'Edit horse', edit_horse_path(@horse), class: "btn btn-outline-dark mr-2"  %>
+        <%= link_to 'Edit horse', edit_horse_path(@horse), class: "btn btn-outline-dark"  %>
     <%else %>
-      <%= link_to 'Back to Search Results', horses_path, class: "btn btn-outline-dark mr-2" %>
-      <%= link_to 'Book', horses_path, class: "book btn mr-2" %>
+      <%= link_to 'Back to Search Results', horses_path, class: "btn btn-outline-dark" %>
+      <%= link_to 'Book', horses_path, class: "book btn" %>
       <% end %>
   </div>
