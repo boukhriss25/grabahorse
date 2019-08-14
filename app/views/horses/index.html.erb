@@ -1,4 +1,4 @@
-<div class= "container">
+<div class= "card-container container">
   <h1 style="text-align: center" class="m-3">Anyone take your fancy?</h1>
   <div class="row d-flex justify-content-center">
     <% @horses.each do |horse| %>
@@ -9,9 +9,9 @@
         <p class="card-text">
           <%= horse.location %>
           <br>
-          £<%= horse.price %>
+          <%= horse.price %> €
         </p>
-        <%= link_to 'Show Horse', horse_path(horse), class: "btn btn-light"  %>
+          <%= link_to 'Show Horse', horse_path(horse), class: "btn btn-flat card-button" %>
       </div>
     </div>
     <% end %>

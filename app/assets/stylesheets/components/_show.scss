@@ -1,14 +1,44 @@
+.container{
+  margin: 40px;
+}
+
 .content-container {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
 
   .infos {
-    width: 60%;
+    flex-grow: 1;
+    margin-right: 20px;
   }
 
-  .description {
-    flex-grow: 1;
+  .location {
+    width: 60%;
+    margin-bottom: 5px;
+  }
+
+  .location-title {
+    text-align: center;
+  }
+
+  .map {
+    object-fit: cover;
+    height: 400px;
+    margin-bottom: 5px;
   }
 }
 
+.horse-photo {
+  object-fit: cover;
+  height: 400px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.info-perso {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
