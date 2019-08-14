@@ -5,29 +5,34 @@
   margin: 40px;
 
   .infos {
-    flex-grow: 1;
+    // flex-grow: 1;
+    width: 60%;
     margin-right: 20px;
   }
 
   .location {
-    width: 60%;
-    margin-bottom: 5px;
+    // width: 60%;
+    flex-grow: 1;
+    margin-top: 24px;
+    // align-items: center;
   }
 
-  .location-title {
-    text-align: center;
-  }
+  // .location-title {
+  //   text-align: center;
+  // }
 
   .map {
     object-fit: cover;
-    height: 400px;
-    margin-bottom: 5px;
+    width: 520px;
+    // margin-bottom: 5px;
   }
 }
 
 .horse-photo {
+  img {
   object-fit: cover;
   height: 400px;
+  }
 }
 
 p {
