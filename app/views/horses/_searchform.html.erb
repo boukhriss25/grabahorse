@@ -1,10 +1,10 @@
-<div class="simpleform">
+<div class="simpleform" style=>
   <div class=" wrapper-container container p-5">
-    <div class="card p-3 ml-4" style=" width: 400px;">
-      <h3>Search for horses in your area</h3>
-  <%= simple_form_for @horse do |f| %>
-  <%= f.input :location, required: false %>
-  <%=link_to 'Search', horses_path, :onclick => "$('#form_id').submit()", class: "btn btn-info" %>
-  <% end %>
-  </div>
-</div>
+    <div class="search-card p-3" style=" width: 400px; background: rgba(255,255,255,0.75);">
+      <h3>Get started</h3>
+        <%= simple_form_for @horse do |f| %>
+        <%= f.input :location, required: false %>
+        <%=link_to 'Search', horses_path, :onclick => "$('#form_id').submit()", class: "btn btn-info" %>
+        <% end %>
+      </div>
+    </div>
