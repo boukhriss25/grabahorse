@@ -1,6 +1,8 @@
-<div class= "card-container container">
-  <h1 style="text-align: center" class="m-3">Anyone take your fancy?</h1>
-  <div class="row d-flex justify-content-center">
+<!-- <div class= "container p-3"> -->
+  <div class="card-container">
+
+  <h1 style="text-align: center" class="m-3">Anyone take your <strong>fancy?</strong></h1>
+  <div class="row">
     <% @horses.each do |horse| %>
     <div class="card">
       <%= cl_image_tag horse.image, height: 150, crop: :scale %>
@@ -16,4 +18,5 @@
     </div>
     <% end %>
   </div>
-</div>
+  </div>
+<!-- </div> -->
