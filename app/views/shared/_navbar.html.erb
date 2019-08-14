@@ -4,7 +4,7 @@
     GRAB A HORSE</h5>
     <div class="navbar right">
       <%= link_to "Search Horse", horses_path, class: "btn btn-outline-dark mr-2" %>
-      <%= link_to "Add Horse", root_path, class: "btn btn-outline-dark mr-2" %>
+      <%= link_to "Add Horse", new_horse_path, class: "btn btn-outline-dark mr-2" %>
       <% if user_signed_in? == false %>
         <%= link_to "Login", new_user_session_path, class: "btn"%>
       <% else %>
