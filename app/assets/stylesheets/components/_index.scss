@@ -12,15 +12,3 @@
 @import "flash";
 @import "footer";
 
-.row {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-grid-gap: 4px;
-}
-
-.card-container {
-  h1 {
-    color: #EE6055;
-    text-shadow: 4px;
-  }
-}
