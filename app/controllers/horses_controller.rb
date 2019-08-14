@@ -9,6 +9,10 @@ class HorsesController < ApplicationController
   def show
   end
 
+  def search
+    @horse = Horse.new
+  end
+
   def new
     @horse = Horse.new
   end
