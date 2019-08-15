@@ -3,7 +3,12 @@ class HorsesController < ApplicationController
   before_action :set_horse, only: [:show, :edit, :update, :destroy]
 
   def index
-    @horses = Horse.all
+    if params[:query].present?
+      sql_query = "location @@ :query OR description @@ :query"
+      @horses = Horse.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @horses = Horse.all
+    end
   end
 
   def show
