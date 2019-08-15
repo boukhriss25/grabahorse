@@ -55,24 +55,29 @@
       </div>
     </div>
 
+  <div class="container show-buttons mb-4">
+ 
     <div class="container mb-4">
       <% if current_user == @horse.user %>
-      <div class="show-buttons">
-      </div>
-      <%= link_to 'Delete Horse', horse_path(@horse), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-dark mr-2"%>
-      <%= link_to 'Edit horse', edit_horse_path(@horse), class: "btn btn-outline-dark"  %>
+        <div class="show-buttons">
+        </div>
+        <%= link_to 'Delete Horse', horse_path(@horse), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-dark mr-2"%>
+        <%= link_to 'Edit horse', edit_horse_path(@horse), class: "btn btn-outline-dark"  %>
 
       <%else %>
-      <div class="mb-3">
-        <h4>Select dates:</h4>
-        <%= simple_form_for @horse do |f| %>
-        <%#= f.input :price, :as => :integer, :input_html => { :class => 'date_picker' } %>
-        <%#= f.button :submit, class: "btn btn-info" %>
-        <% end %>
-        <br>
-        <%= link_to 'Book', horse_path(@horse), class: "book btn" %>
-      </div>
-      <%= link_to 'Back', horses_path, class: "btn btn-outline-dark mt-3" %>
+        
+        <div class=“booking-form col-sm-12 col-lg-5” style=“padding: 20px;“>
+           <h2>Book your horse!</h2>
+           <%= simple_form_for [@horse, @booking] do |f|%>
+             <%= f.input :start_date, class: 'simple_form_input' %>
+             <%= f.input :end_date, class: 'simple_form_input' %>
+             <%= f.submit 'Book your horse', class: 'btn'%>
+           <% end %>
+        </div>
+        <%= link_to 'Back', horses_path, class: "btn btn-outline-dark mt-3" %>
+
       <% end %>
     </div>
+   </div>
+
 
