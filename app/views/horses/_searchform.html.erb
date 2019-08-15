@@ -1,12 +1,12 @@
-<div class="simpleform">
-  <div class=" wrapper-container container p-5">
-    <div class="wrapper-form p-3 mt-5" style="width: 400px;">
-      <h3>Get started</h3>
+  <div class="wrapper-container">
+    <div class="simpleform">
+      <div style="width: 400px; background: transparent; position: absolute; left: 5; margin-top: 80px;">
+        <h2 class="mb-4" style="color: white; text-shadow: 1px 1px #9F9F92;">Get started and rent a horse in a unique setting today.</h2>
         <%= simple_form_for @horse do |f| %>
-        <%= f.input :location, required: false, label_html: { class: "formlabel" }  %>
+        <%= f.input :location, required: false, inline_label: 'Location', label: false%>
         <div class="d-flex flex-row-reverse">
-        <%=link_to 'Search', horses_path, :onclick => "$('#form_id').submit()", class: "btn btn-info" %>
-        <% end %>
+          <%=link_to 'Search', horses_path, :onclick => "$('#form_id').submit()", class: "btn btn-info" %>
+          <% end %>
         </div>
       </div>
     </div>
