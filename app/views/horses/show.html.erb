@@ -58,9 +58,9 @@
   <div class=“booking-form col-sm-12 col-lg-5” style=“padding: 20px;“>
      <h2>Book your horse!</h2>
      <%= simple_form_for [@horse, @booking] do |f|%>
-     <%= f.input :start_date, class: “simple_form_input” %>
-     <%= f.input :end_date, class: “simple_form_input” %>
-     <%= f.submit “Book your horse”, class: “btn”%>
+       <%= f.input :start_date, class: 'simple_form_input' %>
+       <%= f.input :end_date, class: 'simple_form_input' %>
+       <%= f.submit 'Book your horse', class: 'btn'%>
      <% end %>
   </div>
 
@@ -71,6 +71,5 @@
         <%= link_to 'Edit horse', edit_horse_path(@horse), class: "btn btn-outline-dark"  %>
     <%else %>
       <%= link_to 'Back to Search Results', horses_path, class: "btn btn-outline-dark mr-2" %>
-      <%= link_to 'Book', bookings_path, method: :post, class: "book btn" %>
       <% end %>
   </div>

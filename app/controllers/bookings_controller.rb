@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_booking, only: [:show, :destroy]
 
   def index
     @bookings = Booking.all
@@ -9,15 +9,15 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @horse = Horse.find(params[:horse_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @horse = Horse.find(params[:horse_id])
     @booking.horse = @horse
-    # @booking.total_price = @horse.price * (@booking.end_date - @booking.start_date)
+    @booking.total_price = @horse.price * (@booking.end_date - @booking.start_date)
     if @booking.save
-      redirect_to booking(@booking)
+      redirect_to booking_path(@booking)
     else
-      render :new
+      render template: 'horses/show'
     end
   end
 
@@ -39,7 +39,7 @@ class BookingsController < ApplicationController
 
   private
 
-  def booking
+  def set_booking
     @booking = Booking.find(params[:id])
   end
 
