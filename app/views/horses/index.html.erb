@@ -1,6 +1,6 @@
 <!-- <div class= "container p-3"> -->
 
-  <p id="search-message">Horses near München...</p>
+  <p id="search-message">Horses near <%= params[:query].capitalize %>...</p>
   <div class="content">
     <div class="cards">
       <% @horses.each do |horse| %>
