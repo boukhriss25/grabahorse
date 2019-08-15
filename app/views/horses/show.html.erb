@@ -28,20 +28,20 @@
   <div class="container content-container">
     <div class="infos mt-2">
 
-    <h1><%= @horse.name %></h1>
+    <h1><strong><%= @horse.name %></strong></h1>
     <br>
     <div class="info-perso">
       <div>
-        <h4>Owner</h4>
+        <h4><strong>Owner</strong></h4>
         <p><%= @horse.user.email %></p>
       </div>
 <!--         <div class="avatar">
           <%#= image_tag "amine.jpg", alt: "avatar", class: "avatar-large" %>
         </div> -->
       </div>
-      <h4>Description</h4>
+      <h4><strong>Description</strong></h4>
       <p><%= @horse.description %></p>
-      <h4>Price</h4>
+      <h4><strong>Price</strong></h4>
       <p><%= @horse.price %> € / day</p>
     </div>
 
@@ -56,7 +56,7 @@
     </div>
 
   <div class="container show-buttons mb-4">
- 
+
     <div class="container mb-4">
       <% if current_user == @horse.user %>
         <div class="show-buttons">
@@ -65,13 +65,13 @@
         <%= link_to 'Edit horse', edit_horse_path(@horse), class: "btn btn-outline-dark"  %>
 
       <%else %>
-        
+
         <div class=“booking-form col-sm-12 col-lg-5” style=“padding: 20px;“>
            <h2>Book your horse!</h2>
            <%= simple_form_for [@horse, @booking] do |f|%>
              <%= f.input :start_date, class: 'simple_form_input' %>
              <%= f.input :end_date, class: 'simple_form_input' %>
-             <%= f.submit 'Book your horse', class: 'btn'%>
+             <%= f.submit 'Book', class: 'btn btn-book'%>
            <% end %>
         </div>
         <%= link_to 'Back', horses_path, class: "btn btn-outline-dark mt-3" %>
