@@ -11,6 +11,15 @@
   align-items: center;
   margin: 8px;
   margin-bottom: 24px;
+
+  p {
+    margin-bottom: 5px;
+  }
+}
+
+.card-listing-infos {
+  padding: 5px;
+  margin-left: 15px;
 }
 
 .card-listing img {
@@ -21,25 +30,26 @@
 }
 
 .header-dashboard {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.card-listing-infos p {
-  line-height: 1.4;
+  margin-top: 15px;
   margin-bottom: 5px;
 }
 
-.card-listing-infos {
-  padding: 20px;
-  padding-left: 30px;
-}
+
 
 
 .card-listing h2 {
   font-weight: bold;
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+}
+
+.card-listing a:hover {
+  text-decoration: none;
+  color: #EE6055;
+}
+
+.card-listing a {
+  color: black;
 }
 
 
