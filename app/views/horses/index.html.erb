@@ -1,27 +1,35 @@
-<!-- <div class= "container p-3"> -->
 
-  <p id="search-message">Horses near <%= params[:query] %>...</p>
-  <div class="content">
+
+  <% if params[:query].present? %>
+    <p id="search-message">Horses near <%= params[:query] %>...</p>
+  <% end %>
+  <div class="cards-container">
     <div class="cards">
       <% @horses.each do |horse| %>
-      <div class="card">
-        <%= link_to horse_path(horse) do %>
-          <%= cl_image_tag horse.image, height: 150 %>
-        <% end %>
-        <div class="card-info">
-          <div class="card-details mt-2">
-            <div class="card-left">
-              <h5><%= horse.name %></h5>
-              <!-- <h6><%= horse.location %></h6> -->
+        <div class="card">
+          <%= link_to horse_path(horse) do %>
+            <%= cl_image_tag horse.image, height: 150 %>
+          <% end %>
+          <div class="card-info">
+            <div class="card-details mt-2">
+              <div class="card-left">
+                <h5><%= horse.name %></h5>
+                <!-- <h6><%= horse.location %></h6> -->
+              </div>
+              <h6 class=""><%= horse.price %> €</h6>
             </div>
-            <h6 class=""><%= horse.price %> €</h6>
+            <%#= link_to 'View', horse_path(horse), class: "btn btn-flat card-button border" %>
           </div>
-          <%#= link_to 'View', horse_path(horse), class: "btn btn-flat card-button border" %>
         </div>
-      </div>
       <% end %>
     </div>
-    <%= image_tag "map-img.png", alt: "map", id: "map" %>
-  </div>
+
+    <div
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  <%#= image_tag "map-img.png", alt: "map", id: "map" %>
+</div>
 
 
