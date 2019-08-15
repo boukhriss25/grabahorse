@@ -1,4 +1,8 @@
-.card-product {
+.listings {
+  margin-bottom: 30px;
+}
+
+.card-listing {
   overflow: hidden;
   height: 200px;
   background: white;
@@ -6,12 +10,14 @@
   display: flex;
   align-items: center;
   margin: 8px;
-  position: relative;
+  margin-bottom: 24px;
 }
 
-.card-product img {
-  height: 200px;
-
+.card-listing img {
+  height: 100%;
+  width: 200px;
+  object-fit: cover;
+  margin-left: 0;
 }
 
 .header-dashboard {
@@ -19,28 +25,23 @@
   margin-bottom: 20px;
 }
 
-.card-product h5 {
-  font-size: 20px;
+.card-listing-infos p {
   line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+  margin-bottom: 5px;
 }
 
-.card-product p {
-  font-size: 16px;
-  line-height: 1.4;
-  margin-bottom: 0;
-  margin-top: 8px;
+.card-listing-infos {
+  padding: 20px;
+  padding-left: 30px;
 }
 
-.card-product-infos {
-  padding: 30px;
+
+.card-listing h2 {
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 15px;
 }
 
-.card-button {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-}
+
+
 
