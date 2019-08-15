@@ -1,8 +1,8 @@
-  <div class="banner">
-    <div class="horse-photo">
+<div class="banner" style="background-image: url('<%= cl_image_path @horse.image, crop: :scale %>')">
+<!-- <div class="horse-photo">
       <%= cl_image_tag @horse.image %>
-    </div>
-  </div>
+    </div> -->
+</div>
 
 <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -27,7 +27,7 @@
 
 
   <div class="container content-container">
-    <div class="infos mt-3">
+    <div class="infos mt-2">
     <h1><%= @horse.name %></h1>
       <br>
       <div class="info-perso">
@@ -47,10 +47,10 @@
 
     <div class="location">
       <div class="location-title mb-3">
-        <h4>Location:
+        <h4>Located in
         <%= @horse.location %></h4>
       </div>
-      <%= image_tag "https://s3.eestatic.com/2017/10/11/social/La_Jungla_253487245_50033619_1024x576.jpg", alt: "map", class: "map" %>
+      <%= image_tag "https://s3.eestatic.com/2017/10/11/social/La_Jungla_253487245_50033619_1024x576.jpg", alt: "map", class: "map mt-4" %>
 <!--       <p class="mt-2">Exact location information is provided after a booking is confirmed.</p> -->
     </div>
   </div>
