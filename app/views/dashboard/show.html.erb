@@ -6,9 +6,19 @@
       <div class="card-listing">
         <%= cl_image_tag horse.image, crop: :fill %>
         <div class="card-listing-infos">
-            <h2><strong><%= horse.name %></strong></h2>
-              <p>Sun 29 May - Mon 31 May 2021</p>
-              <p>Rider name</p>
+            <h2><%= link_to horse.name, horse_path(horse) %></h2>
+            <p>Upcoming bookings</p>
+              <% if @bookings.nil? %>
+                <p>no booking</p>
+              <% else %>
+                <% horse.bookings.last(3).each do |booking| %>
+                   <%= booking.start_date.strftime("%b %e %Y") %>
+                  <%= booking.end_date %>,
+                  <%= booking.user.email %>,
+                  <%= booking.total_price %>
+                  <br>
+                <%end %>
+              <% end %>
         </div>
       </div>
     <% end %>
@@ -16,15 +26,22 @@
 
   <h3 class="header-dashboard">Your bookings</h3>
   <div class="bookings">
-    <% @horses.each do |horse| %>
-      <div class="card-listing">
-        <%= cl_image_tag horse.image, crop: :fill %>
-        <div class="card-listing-infos">
-            <h2><strong><%= horse.name %></strong></h2>
-              <p>Sun 29 May - Mon 31 May 2021</p>
-              <p>299£</p>
+    <%if @bookings.nil? %>
+      <p>normal</p>
+    <% else %>
+      <% @bookings.each do |booking| %>
+        <div class="card-listing">
+          <%= cl_image_tag booking.horse.image, crop: :fill %>
+          <div class="card-listing-infos">
+            <p>
+              <strong><%= booking.horse.name %></strong>
+            <%= booking.start_date %>
+            <%= booking.end_date %>
+            <%= booking.user.email %>
+            <%= booking.total_price %></p>
+          </div>
         </div>
-      </div>
+      <%end %>
     <% end %>
   </div>
 
