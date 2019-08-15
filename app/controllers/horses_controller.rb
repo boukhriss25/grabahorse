@@ -26,6 +26,7 @@ class HorsesController < ApplicationController
   end
 
   def show
+    @markers = { lat: @horse.latitude, lng: @horse.longitude }
     @booking = Booking.new
   end
 
