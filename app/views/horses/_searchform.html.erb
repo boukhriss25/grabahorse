@@ -2,12 +2,18 @@
   <div class=" wrapper-container container p-5">
     <div class="wrapper-form p-3 mt-5" style="width: 400px;">
       <h3>Get started</h3>
-        <%= simple_form_for @horse do |f| %>
-        <%= f.input :location, required: false, label_html: { class: "formlabel" }  %>
+      <%= form_tag horses_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control mb-3",
+        placeholder: "Enter location"
+        %>
         <div class="d-flex flex-row-reverse">
-        <%=link_to 'Search', horses_path, :onclick => "$('#form_id').submit()", class: "btn btn-info" %>
-        <% end %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+          <%#=link_to 'Search', horses_path, class: "btn btn-info" %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
+
