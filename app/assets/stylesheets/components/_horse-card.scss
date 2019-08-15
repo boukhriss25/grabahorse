@@ -26,6 +26,12 @@ body {
   }
 }
 
+.horse-sml {
+  border-radius: 3px;
+  height: 150px;
+  object-fit: cover;
+}
+
 .card-details {
   display: flex;
   justify-content: space-between;
