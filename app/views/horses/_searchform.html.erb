@@ -1,5 +1,5 @@
 <div class="wrapper-container">
-<div class="simpleform">
+  <div class="simpleform">
     <div class="" style="width: 500px; background: transparent; position: absolute; left: 5; margin-top: 80px;">
       <h1 class="mb-4" style="color: white; text-shadow: 1px 1px #9F9F92;">Get started and rent a horse in a unique setting today.</h1>
       <%= form_tag horses_path, method: :get do %>
@@ -9,11 +9,11 @@
         placeholder: "Enter location"
         %>
         <div class="d-flex flex-row-reverse">
-          <%= submit_tag "Search", class: "btn btn-primary" %>
-          <%#=link_to 'Search', horses_path, class: "btn btn-info" %>
-          <% end %>
+          <button name="button" type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i> Search
+          </button>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
