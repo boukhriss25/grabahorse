@@ -4,8 +4,15 @@ class HorsesController < ApplicationController
 
   def index
     if params[:query].present?
-      sql_query = "location @@ :query OR description @@ :query"
-      @horses = Horse.where(sql_query, query: "%#{params[:query]}%")
+      # sql_query = "location @@ :query OR description @@ :query"
+      # @horses = Horse.geocoded
+      @horses = Horse.near(params[:query], 25)
+      @markers = @horses.map do |horse|
+        {
+          lat: horse.latitude,
+          lng: horse.longitude
+        }
+      end
     else
       @horses = Horse.all
     end
