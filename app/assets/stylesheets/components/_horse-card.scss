@@ -2,16 +2,17 @@ body {
   background-color: white;
 }
 
-.content {
-  display: flex;
+.cards-container {
+  display: grid;
+  grid-template-columns: 60% 40%;
 }
 
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 8px;
-  flex-grow: 1;
-  padding: 0 4px;
+  // flex-grow: 1;
+  padding: 0 4px
 }
 
 .card {
@@ -40,7 +41,9 @@ body {
 }
 
 #map {
-  display: block;
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 .search-card {
@@ -50,3 +53,8 @@ body {
   border-radius: 3px;
 }
 
+// @media (max-width: 1100px) {
+//   #map {
+//     width: 0;
+//   }
+// }
