@@ -1,0 +1,32 @@
+test
+
+<div class="container">
+<h3 class="header-dashboard">These are your listings</h3>
+    <% @horses.each do |horse| %>
+      <div class="row">
+        <div class="col">
+          <div class="card-product">
+            <div class="card-image" style="width: 12rem;">
+              <%= cl_image_tag horse.image, width: 200, crop: :fill %>
+            </div>
+            <div class="card-product-infos">
+              <div class="card-text">
+              <h5> <%= horse.name %></h5>
+              <p>
+                Location: <%= horse.location %>
+                <br>
+                Price: <%= horse.price %> €/day
+                <br>
+                Description: <%= horse.description %>
+              </p>
+              </div>
+              <div class="card-button">
+                 <%= link_to 'Show Horse', horse_path(horse), class: "btn"%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+</div>

@@ -1,32 +1,32 @@
+
 <div class="container">
-<h3 class="header-dashboard">These are your listings</h3>
+  <h3 class="header-dashboard">Your listings</h3>
+  <div class="listings">
     <% @horses.each do |horse| %>
-      <div class="row">
-        <div class="col">
-          <div class="card-product">
-            <div class="card-image" style="width: 12rem;">
-              <%= cl_image_tag horse.image, width: 200, crop: :fill %>
-            </div>
-            <div class="card-product-infos">
-              <div class="card-text">
-              <h5> <%= horse.name %></h5>
-              <p>
-                Location: <%= horse.location %>
-                <br>
-                Price: <%= horse.price %> €/day
-                <br>
-                Description: <%= horse.description %>
-              </p>
-              </div>
-              <div class="card-button">
-                 <%= link_to 'Show Horse', horse_path(horse), class: "btn"%>
-              </div>
-            </div>
-          </div>
+      <div class="card-listing">
+        <%= cl_image_tag horse.image, crop: :fill %>
+        <div class="card-listing-infos">
+            <h2><strong><%= horse.name %></strong></h2>
+              <p>Sun 29 May - Mon 31 May 2021</p>
+              <p>Rider name</p>
         </div>
       </div>
     <% end %>
+  </div>
 
+  <h3 class="header-dashboard">Your bookings</h3>
+  <div class="bookings">
+    <% @horses.each do |horse| %>
+      <div class="card-listing">
+        <%= cl_image_tag horse.image, crop: :fill %>
+        <div class="card-listing-infos">
+            <h2><strong><%= horse.name %></strong></h2>
+              <p>Sun 29 May - Mon 31 May 2021</p>
+              <p>299£</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 
