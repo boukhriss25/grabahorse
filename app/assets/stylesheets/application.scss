@@ -12,6 +12,12 @@
 @import "components/index";
 @import "pages/index";
 
+// body font color
 body {
-  color: rgb(72, 72, 72);
+  h1, h2, h3, h4, h5 {
+    color: rgb(72, 72, 72);
+  }
+  p{
+    color: gray;
+  }
 }

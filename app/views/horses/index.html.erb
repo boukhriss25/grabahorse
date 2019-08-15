@@ -1,23 +1,27 @@
 <!-- <div class= "container p-3"> -->
-  <h1 class="m-3 text-center">
+
+  <p id="search-message">Horses near <%= params[:query].capitalize %>...</p>
   <div class="content">
     <div class="cards">
       <% @horses.each do |horse| %>
       <div class="card">
-        <%= cl_image_tag horse.image, height: 150 %>
-        <div class="card-info mt-2">
-          <div class="card-details">
-            <div class="card-title ml-3">
+        <%= link_to horse_path(horse) do %>
+          <%= cl_image_tag horse.image, height: 150 %>
+        <% end %>
+        <div class="card-info">
+          <div class="card-details mt-2">
+            <div class="card-left">
               <h5><%= horse.name %></h5>
-              <h6><%= horse.location %></h6>
+              <!-- <h6><%= horse.location %></h6> -->
             </div>
-            <h6 class="mr-3"><%= horse.price %> €</h6>
+            <h6 class=""><%= horse.price %> €</h6>
           </div>
-          <%= link_to 'View', horse_path(horse), class: "btn btn-flat card-button border" %>
+          <%#= link_to 'View', horse_path(horse), class: "btn btn-flat card-button border" %>
         </div>
       </div>
       <% end %>
     </div>
     <%= image_tag "map-img.png", alt: "map", id: "map" %>
   </div>
-  <!-- </div> -->
+
+

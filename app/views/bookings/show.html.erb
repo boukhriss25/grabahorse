@@ -1,0 +1,16 @@
+
+
+<h1>Your booking is confirmed</h1>
+
+<%= @booking.start_date %>
+<br>
+<%= @booking.end_date %>
+<br>
+<%= @booking.total_price %> euros
+<br>
+<%= @booking.horse.name %>
+<br>
+
+
+<%= link_to 'Delete Booking', booking_path(@booking), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-dark mr-2"%>
+

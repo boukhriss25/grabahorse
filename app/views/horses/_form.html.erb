@@ -1,16 +1,17 @@
-<div class="simpleform">
+<div class="simpleform p-3">
   <%= simple_form_for @horse do |f| %>
-  <%= f.input :name %>
-  <%= f.input :location %>
-  <%= f.input :price %>
-  <%= f.input :description %>
+  <%= f.input :name, label_html: { class: "formlabel" } %>
+  <%= f.input :location, label_html: { class: "formlabel" }  %>
+  <%= f.input :price, label_html: { class: "formlabel" }  %>
+  <%= f.input :description, label_html: { class: "formlabel" }  %>
   <div class="d-flex justify-content-center">
-    <%= f.input :image %>
-    <%= f.input :image_cache, as: :hidden %>
+    <%= f.input :image, label_html: { class: "formlabel" }  %>
+    <%= f.input :image_cache, as: :hidden, label_html: { class: "formlabel" }  %>
     <div class="mt-4"style="height: 40px;">
-      <%= f.button :submit, class: "btn btn-info" %>
+      <%= f.button :submit, class: "btn btn-info"%>
       <% end %>
     </div>
   </div>
 </div>
+
 
