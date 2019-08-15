@@ -2,19 +2,26 @@ class HorsesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_horse, only: [:show, :edit, :update, :destroy]
 
+  def markers(horses)
+    @markers = horses.map do |horse|
+      {
+        lat: horse.latitude,
+        lng: horse.longitude
+        # infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat }),
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+      }
+    end
+  end
+
   def index
     if params[:query].present?
       # sql_query = "location @@ :query OR description @@ :query"
       # @horses = Horse.geocoded
       @horses = Horse.near(params[:query], 25)
-      @markers = @horses.map do |horse|
-        {
-          lat: horse.latitude,
-          lng: horse.longitude
-        }
-      end
+      markers(@horses)
     else
       @horses = Horse.all
+      markers(@horses)
     end
   end
 
