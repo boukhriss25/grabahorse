@@ -8,7 +8,7 @@ class HorsesController < ApplicationController
         lat: horse.latitude,
         lng: horse.longitude
         # infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat }),
-        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+        # image_url: helpers.asset_url('icon-img.png')
       }
     end
   end
@@ -18,15 +18,14 @@ class HorsesController < ApplicationController
       # sql_query = "location @@ :query OR description @@ :query"
       # @horses = Horse.geocoded
       @horses = Horse.near(params[:query], 25)
-      markers(@horses)
     else
       @horses = Horse.all
-      markers(@horses)
     end
+    markers(@horses)
   end
 
   def show
-    @markers = { lat: @horse.latitude, lng: @horse.longitude }
+    @markers = [{ lat: @horse.latitude, lng: @horse.longitude }]
     @booking = Booking.new
   end
 
