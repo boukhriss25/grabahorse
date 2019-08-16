@@ -2,9 +2,13 @@ body {
   background-color: white;
 }
 
-.cards-container {
+.whole-thing {
   display: grid;
   grid-template-columns: 60% 40%;
+}
+
+.top-bit{
+  margin: 8px 0 0 4px;
 }
 
 .cards {
@@ -12,7 +16,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 12px;
   // flex-grow: 1;
-  padding: 8px
+  padding: 0 8px 8px 8px;
 }
 
 .card {
