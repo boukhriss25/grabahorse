@@ -20,7 +20,7 @@ puts 'Cleaning database of all horses...'
 Horse.destroy_all
 puts 'Initiating horses seed...'
 
-locations = ["Barcelona", "Paris", "Casalanca", "Medellin", "Milan", "Swindon"]
+locations = ["〒105-8576 東京都港区海岸１丁目１６−2"]
 
 images = [
   "https://www.sciencenews.org/sites/default/files/2018/02/main/articles/022118_EE_horses_feat.jpg",
