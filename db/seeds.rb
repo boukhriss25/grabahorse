@@ -20,11 +20,30 @@ puts 'Cleaning database of all horses...'
 Horse.destroy_all
 puts 'Initiating horses seed...'
 
-locations = ["08820 El Prat de Llobregat, Barcelona"]
+locations = ["08820 El Prat de Llobregat, Barcelona",
+  "Carretera de Torroella, 0, Km 1 200, 17140 Ullà, Girona",
+  "Passatge de Domingo, 3, 08007 Barcelona",
+  "Passeig Muntanya s/n (Can Vilà), 08960 Sant Just Desvern, Barcelona",
+  "Carrer de Sardenya, 373, 08025 Barcelona",
+  "Carrer de l'Hospital, 155, 08001 Barcelona",
+  "62 Campden St, Kensington, London W8 7EL, UK",
+  "10 Downing St, Westminster, London SW1A 2AA, UK",
+  "Pier Street, Isle of Dogs, London E14 3HP, UK",
+  "38 Great Eastern St, Hackney, London EC2A 3ES, UK",
+  "258 Edgware Rd, London W2 1DU, UK",
+  "Overhoeksplein 2, 1031 KS Amsterdam, Netherlands",
+  "Stationsplein, 1012 AB Amsterdam, Netherlands"
+]
+
+breeds = ["Andalusian horse", "Mustang", "American Horse", "Shire horse", "Tennesse Walking Horse", "Shetland pony"]
 
 images = [
   "https://www.sciencenews.org/sites/default/files/2018/02/main/articles/022118_EE_horses_feat.jpg",
-  "https://images2.minutemediacdn.com/image/upload/c_crop,h_1194,w_2121,x_0,y_34/f_auto,q_auto,w_1100/v1553786510/shape/mentalfloss/539787-istock-879570436.jpg"
+  "https://images2.minutemediacdn.com/image/upload/c_crop,h_1194,w_2121,x_0,y_34/f_auto,q_auto,w_1100/v1553786510/shape/mentalfloss/539787-istock-879570436.jpg",
+  "https://i.ytimg.com/vi/_QhJ27VGD0E/maxresdefault.jpg",
+  "https://i.ytimg.com/vi/Ss-UaXeJKEY/maxresdefault.jpg",
+  "https://www.horsebreedspictures.com/wp-content/uploads/2015/09/American-Paint-Horse-Pictures.jpg",
+  "https://i.ytimg.com/vi/8DYCfEBovl0/maxresdefault.jpg"
 ]
 
 20.times do
@@ -32,7 +51,7 @@ images = [
     name: Faker::Creature::Horse.name,
     location: locations.sample,
     price: rand(25..75),
-    description: Faker::Coffee.notes,
+    description: breeds.sample,
     user: User.all.sample,
     remote_image_url: images.sample
     )
