@@ -1,21 +1,21 @@
-<h1 class="booking-confirmed">Your booking is confirmed! You booked <%= @booking.horse.name %></h1>
-<div class="booking-info">
-  <h5> Booking Start Date: <%= @booking.start_date %></h5>
-  <br>
-  <h5> Booking End Date: <%= @booking.end_date %></h5>
-  <br>
-  <h5> Total Price: <%= @booking.total_price %> €</h5>
+<div class="booking-message"><p>Your booking is <%= @booking.status %>! <strong>You can see the details of your booking in your dashboard.</strong></p>
 </div>
-<%= link_to 'Delete Booking', booking_path(@booking), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-delete"%>
-
 <div class="banner" style="background-image: url('<%= cl_image_path @booking.horse.image, crop: :scale %>')">
-  </div>
+</div>
 
   <div class="container content-container">
     <div class="infos mt-2">
 
       <h1><strong><%= @booking.horse.name %></strong></h1>
       <br>
+       <div class="booking-info">
+        <h3>Booking summary:</h3>
+        <h5> Booking Start Date: <%= @booking.start_date %></h5>
+        <h5> Booking End Date: <%= @booking.end_date %></h5>
+        <br>
+        <h5> Total Price: <strong><%= @booking.total_price %> €</strong></h5>
+      </div>
+      <%= link_to 'Delete Booking', booking_path(@booking), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-delete"%>
       <div class="info-perso">
         <div>
           <h4><strong>Owner</strong></h4>
@@ -28,15 +28,10 @@
         <h4><strong>Price</strong></h4>
         <p><%= @booking.horse.price %> € / day</p>
       </div>
-
-    <div class="location">
-      <div class="location-title mb-3">
-        <h4>Stationed in
-          <%= @booking.horse.location %></h4>
-        </div>
-        <%= image_tag "https://s3.eestatic.com/2017/10/11/social/La_Jungla_253487245_50033619_1024x576.jpg", alt: "map", class: "map mt-4" %>
-        </div>
-      </div>
+    <div
+      id="map" class="show-map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
 </div>

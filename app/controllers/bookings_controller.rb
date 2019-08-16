@@ -6,6 +6,8 @@ class BookingsController < ApplicationController
   end
 
   def show
+    horse = @booking.horse
+    @markers = [{ lat: horse.latitude, lng: horse.longitude }]
   end
 
   def create
@@ -38,6 +40,9 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def status
+  end
 
   def set_booking
     @booking = Booking.find(params[:id])

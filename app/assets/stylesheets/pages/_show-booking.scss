@@ -1,7 +1,14 @@
 .booking-confirmed{
-  color: green;
+  color: orange;
 }
 
-.booking-info{
-  padding-left: 5px;
+.booking-message p{
+  font-size: 25px;
+  color: black;
+  text-align: center;
+  margin: 0px;
 }
+.booking-message{
+  background-color: #F6F7F8;
+}
+
