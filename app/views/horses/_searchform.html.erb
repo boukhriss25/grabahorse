@@ -1,19 +1,18 @@
 <div class="wrapper-container">
   <div class="simpleform">
-    <div class="" style="width: 500px; background: transparent; position: absolute; left: 5; margin-top: 80px;">
-      <h1 class="mb-4" style="color: white; text-shadow: 1px 1px #9F9F92;">Get started and rent a horse in a unique setting today.</h1>
-      <%= form_tag horses_path, method: :get do %>
-      <%= text_field_tag :query,
-      params[:query],
-      class: "form-control mb-3",
-        placeholder: "Enter location"
-        %>
-        <div class="d-flex flex-row-reverse">
-          <button name="button" type="submit" class="btn btn-primary">
+    <div class="search-container" style="width: 500px; margin-top: 95px;">
+      <h1 class="mb-4" style="color: black; text-shadow: 1px 1px grey;">Get started and rent a horse close to you today.</h1>
+      <div class="search-form-control form-group">
+        <%= form_tag horses_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+          placeholder: "Location"%>
+          <button name="button" type="submit" class="btn btn-flat">
             <i class="fas fa-search"></i> Search
           </button>
-            <% end %>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
+  </div>
