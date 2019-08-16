@@ -1,4 +1,4 @@
-<div class="booking-message">
+-<div class="booking-message">
   <p>
   <% if @booking.status == "pending"  %>
     <p class="booking-pending">Your booking is <%= @booking.status %></p>
@@ -27,18 +27,7 @@
     <p><%= @booking.horse.user.email %></p>
     <h6> Total price <strong><%= @booking.total_price %> €</strong></h6>
   </div>
-  <!-- <div class="container-left flex-grow-1">
-    <h3><strong><%= @booking.horse.name %></strong></h3>
-    <br>
-    <div class="info-perso">
-      <div>
-        <h5 style="line-height: 0.5;"><strong>Owner</strong></h5>
-        <p><%= @booking.horse.user.email %></p>
-      </div>
-    </div>
-      <h5 style="line-height: 0.5;"><strong>Description</strong></h5>
-      <p><%= @booking.horse.description %></p>
-  </div> -->
+
   <div class="container content-container">
     <div class="location-title mb-2 ">
       <h6>Stationed in

@@ -7,10 +7,17 @@
 }
 .booking-message p{
   font-size: 25px;
-  color: black;
   text-align: center;
   margin: 0px;
 }
 .booking-message{
-  background-color: #F6F7F8;
+  background: white;
+  border-radius: 4px;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-bottom: 10px;
+}
+.text-center{
+  color: #999999;
+  padding-bottom: 5px;
 }
