@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :destroy]
+  before_action :set_booking, only: [:show, :destroy, :confirm_booking, :reject_booking]
 
   def index
     @bookings = Booking.all
@@ -24,13 +24,23 @@ class BookingsController < ApplicationController
   # def edit
   # end
 
-  # def update
-  #   if @booking.update(booking)
-  #     redirect_to booking(@booking)
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def confirm_booking
+    if @booking.status == "pending"
+      if params[:status] == "accept"
+        @booking.status = "Accepted"
+      elsif params[:status] == "reject"
+        @booking.status = "Rejected"
+      end
+      @booking.save
+    end
+    redirect_to dashboard_path
+  end
+
+  def reject_booking
+    @booking.status = "rejected"
+    @booking.save
+    redirect_to dashboard_path
+  end
 
   def destroy
     @booking.destroy
@@ -46,4 +56,5 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end
+
 end
