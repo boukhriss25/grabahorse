@@ -36,7 +36,7 @@ User.create(
   email: "glend@gmail.com",
   password: "password"
 )
-users += User.create(
+User.create(
   email: "wendy@gmail.com",
   password: "password"
 )
