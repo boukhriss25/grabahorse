@@ -71,9 +71,12 @@ Horse.destroy_all
 puts 'Initiating horses seed...'
 
 locations = ["08820 El Prat de Llobregat, Barcelona",
-  "Carretera de Torroella, 0, Km 1 200, 17140 Ullà, Girona",
+  "111 Commercial St, Walla Walla NSW 2659, Australia",
+  "Bowler St, Holbrook NSW 2644, Australia",
+  "152 Walla Walla Rd, Walla Walla, NSW 2659, Australia",
+  "Calle 1ra Sur Carrasquilla y Vía España, Av. 1 Sur, Panamá, Panama",
+  "Via Simon Bolivar, Panama City, Panama",
   "Passatge de Domingo, 3, 08007 Barcelona",
-  "Passeig Muntanya s/n (Can Vilà), 08960 Sant Just Desvern, Barcelona",
   "Carrer de Sardenya, 373, 08025 Barcelona",
   "Carrer de l'Hospital, 155, 08001 Barcelona",
   "62 Campden St, Kensington, London W8 7EL, UK",
