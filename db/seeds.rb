@@ -11,8 +11,58 @@ puts 'Cleaning database of all users...'
 User.destroy_all
 puts 'Initiating users seed...'
 
+
 User.create(
   email: "john@john.com",
+  password: "password"
+)
+
+User.create(
+  email: "amine@gmail.com",
+  password: "password"
+)
+
+User.create(
+  email: "rita@gmail.com",
+  password: "password"
+)
+
+User.create(
+  email: "mehdi@gmail.com",
+  password: "password"
+)
+
+User.create(
+  email: "glend@gmail.com",
+  password: "password"
+)
+users += User.create(
+  email: "wendy@gmail.com",
+  password: "password"
+)
+
+User.create(
+  email: "thoma@gmail.com",
+  password: "password"
+)
+
+User.create(
+  email: "victor@gmail.com",
+  password: "password"
+)
+
+User.create(
+  email: "claude@gmail.com",
+  password: "password"
+)
+
+User.create(
+  email: "robin@gmail.com",
+  password: "password"
+)
+
+User.create(
+  email: "sebastien@gmail.com",
   password: "password"
 )
 
@@ -43,7 +93,8 @@ images = [
   "https://i.ytimg.com/vi/_QhJ27VGD0E/maxresdefault.jpg",
   "https://i.ytimg.com/vi/Ss-UaXeJKEY/maxresdefault.jpg",
   "https://www.horsebreedspictures.com/wp-content/uploads/2015/09/American-Paint-Horse-Pictures.jpg",
-  "https://i.ytimg.com/vi/8DYCfEBovl0/maxresdefault.jpg"
+  "https://i.ytimg.com/vi/8DYCfEBovl0/maxresdefault.jpg",
+  "https://equusmagazine.com/.image/t_share/MTQ1Mjc2NDE4Mzk1MjE5MzUy/feral-horse-and-foal-walk-along-the-beach-on-vieques-island-off-puerto-rico.jpg"
 ]
 
 20.times do
