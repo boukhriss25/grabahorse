@@ -45,13 +45,18 @@
       <p><%= @horse.price %> € / day</p>
     </div>
 
-    <div class="location">
-      <div class="location-title mb-3">
+    <div class="location ml-5">
+      <div class="location-title mb-5">
         <h4>Stationed in
           <%= @horse.location %></h4>
         </div>
-        <%= image_tag "https://s3.eestatic.com/2017/10/11/social/La_Jungla_253487245_50033619_1024x576.jpg", alt: "map", class: "map mt-4" %>
+        <%#= image_tag "https://s3.eestatic.com/2017/10/11/social/La_Jungla_253487245_50033619_1024x576.jpg", alt: "map", class: "map mt-4" %>
         <!--       <p class="mt-2">Exact location information is provided after a booking is confirmed.</p> -->
+            <div
+    id="map" class="show-map"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
       </div>
     </div>
 
