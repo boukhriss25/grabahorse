@@ -1,8 +1,8 @@
 <div class="simpleform p-3">
   <%= simple_form_for @horse do |f| %>
   <%= f.input :name, label_html: { class: "formlabel" } %>
-  <%= f.input :location, label_html: { class: "formlabel" }  %>
-  <%= f.input :price, label_html: { class: "formlabel" }  %>
+  <%= f.input :location, label: "Address", label_html: { class: "formlabel" }  %>
+  <%= f.input :price, label: "Price €", label_html: { class: "formlabel" }  %>
   <%= f.input :description, label_html: { class: "formlabel" }  %>
   <div class="d-flex justify-content-center">
     <%= f.input :image, label_html: { class: "formlabel" }  %>
@@ -13,5 +13,6 @@
     </div>
   </div>
 </div>
+
 
 
