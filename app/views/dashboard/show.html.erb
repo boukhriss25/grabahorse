@@ -6,7 +6,7 @@
       <div class="card-listing">
         <%= cl_image_tag horse.image, crop: :fill %>
         <div class="card-listing-infos">
-            <h2 class="horse-name"><%= link_to horse.name, horse_path(horse) %></h2>
+            <h4 class="horse-name" style="line-height: 0;"><%= link_to horse.name, horse_path(horse) %></h4>
             <p>Bookings</p>
               <% if @bookings.nil? %>
                 <p>no booking</p>
