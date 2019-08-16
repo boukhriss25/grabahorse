@@ -6,19 +6,37 @@
       <div class="card-listing">
         <%= cl_image_tag horse.image, crop: :fill %>
         <div class="card-listing-infos">
-            <h2><%= link_to horse.name, horse_path(horse) %></h2>
-            <p>Upcoming bookings</p>
+            <h4 class="horse-name" style="line-height: 0;"><%= link_to horse.name, horse_path(horse) %></h4>
+            <p>Bookings</p>
               <% if @bookings.nil? %>
                 <p>no booking</p>
               <% else %>
                 <% horse.bookings.last(3).each do |booking| %>
-                   <%= booking.start_date.strftime("%b %e %Y") %>
-                    <%= booking.end_date %>,
-                    <%= booking.user.email %>,
-                    <%= booking.total_price %>
-                    <%= booking.status %>
-                  <%= link_to 'Accept', confirm_booking_path(booking, status: 'accept'), method: :patch, action: :confirm_booking %>
-                  <%= link_to 'Reject', confirm_booking_path(booking, status: 'reject'), method: :patch, action: :confirm_booking %>
+                <div class="horse-booking-info d-flex justify-content-between">
+                  <div class="infos-horse-booking d-flex justify-content-between">
+                    <p class="infos-horse-booking-withoutstatus">
+                      <%= booking.start_date.strftime("%b %e %Y") %>
+                      <%= booking.end_date %>,
+                      <%= booking.user.email %>,
+                      <%= booking.total_price %> €
+                      <% if booking.status == "pending"  %>
+                        <p class="booking-pending"><%= booking.status %></p>
+                      <% elsif booking.status == "Accepted" %>
+                        <p class="booking-accepted"><%= booking.status %></p>
+                      <% else booking.status == "Rejected" %>
+                        <p class="booking-rejected"><%= booking.status %></p>
+                      <% end %>
+                    </p>
+
+                  </div>
+                  <div class="status-buttons">
+                    <p>
+                      <%= link_to 'Accept', confirm_booking_path(booking, status: 'accept'), method: :patch, action: :confirm_booking %>
+                      <%= link_to 'Reject', confirm_booking_path(booking, status: 'reject'), method: :patch, action: :confirm_booking %>
+                    </p>
+                  </div>
+                </div>
+
                   <br>
                 <%end %>
               <% end %>
@@ -32,20 +50,29 @@
     <%if @bookings.nil? %>
       <p>normal</p>
     <% else %>
+    <div class="cards-booking">
       <% @bookings.each do |booking| %>
-        <div class="card-listing">
+        <div class="card-booking">
           <%= cl_image_tag booking.horse.image, crop: :fill %>
-          <div class="card-listing-infos">
-            <p>
-              <strong><%= booking.horse.name %></strong>
+          <div class="card-bookingss-infos">
+            <h2 class="horse-name-booking"><%= link_to booking.horse.name, booking_path(booking) %></h2>
+
+            <p class="booking-date-mine">
             <%= booking.start_date %>
-            <%= booking.end_date %>
-            <%= booking.user.email %>
-            <%= booking.total_price %></p>
-            <%= booking.status %>
+            <%= booking.end_date %></p>
+            <p class="booking-price-mine"><%= booking.total_price %> €</p>
+            <% if booking.status == "pending"  %>
+              <p class="booking-pending"><%= booking.status %></p>
+            <% elsif booking.status == "Accepted" %>
+              <p class="booking-accepted"><%= booking.status %></p>
+            <% else booking.status == "Rejected" %>
+              <p class="booking-rejected"><%= booking.status %></p>
+            <% end %>
           </div>
         </div>
       <%end %>
+    </div>
+
     <% end %>
   </div>
 

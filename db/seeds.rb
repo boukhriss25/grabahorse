@@ -33,7 +33,7 @@ User.create(
 )
 
 User.create(
-  email: "glend@gmail.com",
+  email: "glen@gmail.com",
   password: "password"
 )
 User.create(
@@ -81,7 +81,6 @@ locations = ["08820 El Prat de Llobregat, Barcelona",
   "Carrer de l'Hospital, 155, 08001 Barcelona",
   "62 Campden St, Kensington, London W8 7EL, UK",
   "10 Downing St, Westminster, London SW1A 2AA, UK",
-  "Pier Street, Isle of Dogs, London E14 3HP, UK",
   "38 Great Eastern St, Hackney, London EC2A 3ES, UK",
   "258 Edgware Rd, London W2 1DU, UK",
   "Overhoeksplein 2, 1031 KS Amsterdam, Netherlands",

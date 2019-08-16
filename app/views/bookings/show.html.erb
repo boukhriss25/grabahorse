@@ -1,7 +1,73 @@
-<div class="booking-message"><p>Your booking is <%= @booking.status %>! <strong>You can see the details of your booking in your dashboard.</strong></p>
+<div class="booking-message">
+  <p>
+  <% if @booking.status == "pending"  %>
+    <p class="booking-pending">Your booking is <%= @booking.status %></p>
+  <% elsif @booking.status == "Accepted" %>
+    <p class="booking-accepted">Your booking is <%= @booking.status %></p>
+  <% else @booking.status == "Rejected" %>
+    <p class="booking-rejected">Your booking is <%= @booking.status %></p>
+  <% end %>
+   <div class="text-center"> <strong>You can see the details of your booking in your dashboard.</strong></div>
+ </p>
 </div>
 <div class="banner" style="background-image: url('<%= cl_image_path @booking.horse.image, crop: :scale %>')">
 </div>
+
+<div class="container d-flex mt-3">
+  <div class="booking-info">
+    <h3>Booking details</h3>
+    <br>
+    <h6 style="line-height: 0;"> Booking Start Date </h6>
+    <p><%= @booking.start_date %></p>
+    <h6 style="line-height: 0;"> Booking End Date </h6>
+    <p><%= @booking.end_date %></p>
+    <h6 style="line-height: 0;"> Horse</h6>
+     <p> <%= @booking.horse.name %></p>
+    <h6 style="line-height: 0;">Owner</h6>
+    <p><%= @booking.horse.user.email %></p>
+    <h6> Total price <strong><%= @booking.total_price %> €</strong></h6>
+  </div>
+  <!-- <div class="container-left flex-grow-1">
+    <h3><strong><%= @booking.horse.name %></strong></h3>
+    <br>
+    <div class="info-perso">
+      <div>
+        <h5 style="line-height: 0.5;"><strong>Owner</strong></h5>
+        <p><%= @booking.horse.user.email %></p>
+      </div>
+    </div>
+      <h5 style="line-height: 0.5;"><strong>Description</strong></h5>
+      <p><%= @booking.horse.description %></p>
+  </div> -->
+  <div class="container content-container">
+    <div class="location-title mb-2 ">
+      <h6>Stationed in
+        <%= @booking.horse.location %></h6>
+    </div>
+          <%#= image_tag "https://s3.eestatic.com/2017/10/11/social/La_Jungla_253487245_50033619_1024x576.jpg", alt: "map", class: "map mt-4" %>
+          <!--       <p class="mt-2">Exact location information is provided after a booking is confirmed.</p> -->
+          <div
+          id="map" class="show-map"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
 
   <div class="container content-container">
     <div class="infos mt-2">
@@ -38,3 +104,4 @@
 
 
 
+ -->
