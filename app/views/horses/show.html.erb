@@ -25,54 +25,30 @@
   </a>
 </div> -->
 
-<div class="container content-container">
-  <div class="infos mt-2">
 
-    <h1><strong><%= @horse.name %></strong></h1>
+
+<div class="container d-flex mt-3">
+
+  <div class="container-left flex-grow-1">
+    <h3><strong><%= @horse.name %></strong></h3>
     <br>
     <div class="info-perso">
       <div>
         <h5 style="line-height: 0.5;"><strong>Owner</strong></h5>
         <p><%= @horse.user.email %></p>
       </div>
-<!--         <div class="avatar">
-          <%#= image_tag "amine.jpg", alt: "avatar", class: "avatar-large" %>
-        </div> -->
-      </div>
+    </div>
       <h5 style="line-height: 0.5;"><strong>Description</strong></h5>
       <p><%= @horse.description %></p>
       <h5 style="line-height: 0.5;"><strong>Price</strong></h5>
       <p><%= @horse.price %> € / day</p>
-    </div>
-
-    <div class="location ml-5">
-      <div class="location-title mb-5 text-center">
-        <h4>Stationed in
-          <%= @horse.location %></h4>
-        </div>
-        <%#= image_tag "https://s3.eestatic.com/2017/10/11/social/La_Jungla_253487245_50033619_1024x576.jpg", alt: "map", class: "map mt-4" %>
-        <!--       <p class="mt-2">Exact location information is provided after a booking is confirmed.</p> -->
-        <div
-        id="map" class="show-map"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-    </div>
   </div>
 
-  <div class="container show-buttons">
-
+  <div class="container-right">
     <% if current_user == @horse.user %>
-
-    <div class="show-buttons mb-3">
-      <%= link_to 'Delete Horse', horse_path(@horse), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-dark mr-2"%>
-      <%= link_to 'Edit horse', edit_horse_path(@horse), class: "btn btn-outline-dark"  %>
-    </div>
-  </div>
-
-  <%else %>
-
-  <div class="wrapper-form p-4 ml-1 mb-5" style=" width: 400px;">
+    <div></div>
+    <%else %>
+    <div class="wrapper-form p-4 ml-1 mb-5" style=" width: 400px;">
     <div class=“booking-form” style="padding: 20px">
       <h2 style="padding-bottom: 15px;">Book horse</h2>
       <%= simple_form_for [@horse, @booking] do |f|%>
@@ -84,8 +60,40 @@
      </div>
    </div>
  </div>
+<% end %>
+  </div>
+</div>
 
- <div class="back-btn" float:"">
+
+<div class="container content-container">
+
+      <div class="location-title mb-2 ">
+        <h4>Stationed in
+          <%= @horse.location %></h4>
+        </div>
+        <%#= image_tag "https://s3.eestatic.com/2017/10/11/social/La_Jungla_253487245_50033619_1024x576.jpg", alt: "map", class: "map mt-4" %>
+        <!--       <p class="mt-2">Exact location information is provided after a booking is confirmed.</p> -->
+        <div
+        id="map" class="show-map"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+
+  </div>
+
+  <div class="container show-buttons mb-3">
+
+    <% if current_user == @horse.user %>
+
+    <div class="show-buttons mb-3">
+      <%= link_to 'Delete Horse', horse_path(@horse), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-dark mr-2 mt-3"%>
+      <%= link_to 'Edit horse', edit_horse_path(@horse), class: "btn btn-outline-dark mt-3"  %>
+    </div>
+  </div>
+
+  <%else %>
+
+ <div class="back-btn">
     <%= link_to 'Back', horses_path, class: "btn btn-outline-dark mt-3" %>
   </div>
 
