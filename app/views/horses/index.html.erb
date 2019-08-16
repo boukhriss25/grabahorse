@@ -1,5 +1,4 @@
 
-
 <% if @horses.empty? %>
 <p id="search-message">Found no horses near <%= params[:query] %>.</p>
 <% elsif params[:query].present? %>
@@ -16,11 +15,11 @@
         <div class="card-details mt-2">
           <div class="card-left">
             <h5><%= horse.name %></h5>
-            <h5><small><%= horse.location %></small></h5>
+            <h5 style="color: rgb(72, 72, 72); line-height: 0.2;"><small><%= horse.location %></small></h5>
             <!-- <h5><small><%= horse.description %></small></h5> -->
           </div>
           <div class="price">
-            <h5 class=""><small><%= horse.price %>€</small></h5>
+            <h5 style="color: rgb(72, 72, 72);"><small><%= horse.price %>€</small></h5>
           </div>
         </div>
       <!-- </div> -->
