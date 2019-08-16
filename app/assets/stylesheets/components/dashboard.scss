@@ -11,15 +11,48 @@
   align-items: center;
   margin: 8px;
   margin-bottom: 24px;
+  margin-left: 0px;
 
   p {
     margin-bottom: 5px;
   }
 }
 
+
+
+.cards-booking {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 12px;
+  // flex-grow: 1;
+  padding: 0px;
+}
+
+.card-booking {
+  // height: 200px;
+  background-color: white;
+  // box-shadow: 0 0 1px rgba(0,0,0,0.2);
+  // border-radius: 3px;
+  border-style: none;
+  margin: 6px;
+  margin-left: 0;
+  // padding: 8px 8px 0px 8px;
+  img {
+    // border-radius: 3px;
+    object-fit: cover;
+    width: 100%;
+    margin-bottom: 6px;
+  }
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  margin-bottom: 60px;
+
+}
+
 .card-listing-infos {
   padding: 5px;
   margin-left: 15px;
+  margin-right: 15px;
+  width: 100%;
 }
 
 .card-listing img {
@@ -52,6 +85,57 @@
   color: black;
 }
 
+.booking-pending {
+  color: orange;
+}
 
+.booking-accepted {
+  color: green;
+}
 
+.booking-rejected {
+  color: red;
+}
 
+.infos-horse-booking-withoutstatus {
+  padding-right: 15px;
+}
+
+.booking-date {
+  color: #999999;
+}
+
+.horse-name {
+  padding-bottom: 10px;
+}
+
+.horse-name-booking {
+  padding-bottom: 6px;
+}
+
+.card-bookingss-infos {
+  padding: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 100%;
+}
+
+.booking-date-mine {
+  margin-bottom: 2px;
+}
+
+.booking-price-mine {
+  margin-bottom: 2px;
+}
+
+.horse-name-booking a {
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.horse-name-booking a:hover {
+  text-decoration: none;
+  color: #EE6055;
+}
