@@ -15,14 +15,17 @@
 
 <div class="container d-flex mt-3">
   <div class="booking-info">
-    <h3>Booking summary</h3>
+    <h3>Booking details</h3>
     <br>
-    <h6> Booking Start Date <%= @booking.start_date %></h6>
-    <h6> Booking End Date <%= @booking.end_date %></h6>
-    <h6> Horse Name is <strong><%= @booking.horse.name %></strong></h6>
-    <h6> Horse Owner <%= @booking.horse.user.email %></h6>
-    <br>
-    <h6> Total Price <strong><%= @booking.total_price %> €</strong></h6>
+    <h6 style="line-height: 0;"> Booking Start Date </h6>
+    <p><%= @booking.start_date %></p>
+    <h6 style="line-height: 0;"> Booking End Date </h6>
+    <p><%= @booking.end_date %></p>
+    <h6 style="line-height: 0;"> Horse</h6>
+     <p> <%= @booking.horse.name %></p>
+    <h6 style="line-height: 0;">Owner</h6>
+    <p><%= @booking.horse.user.email %></p>
+    <h6> Total price <strong><%= @booking.total_price %> €</strong></h6>
   </div>
   <!-- <div class="container-left flex-grow-1">
     <h3><strong><%= @booking.horse.name %></strong></h3>
@@ -38,8 +41,8 @@
   </div> -->
   <div class="container content-container">
     <div class="location-title mb-2 ">
-      <h4>Stationed in
-        <%= @booking.horse.location %></h4>
+      <h6>Stationed in
+        <%= @booking.horse.location %></h6>
     </div>
           <%#= image_tag "https://s3.eestatic.com/2017/10/11/social/La_Jungla_253487245_50033619_1024x576.jpg", alt: "map", class: "map mt-4" %>
           <!--       <p class="mt-2">Exact location information is provided after a booking is confirmed.</p> -->
