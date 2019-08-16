@@ -13,9 +13,12 @@
               <% else %>
                 <% horse.bookings.last(3).each do |booking| %>
                    <%= booking.start_date.strftime("%b %e %Y") %>
-                  <%= booking.end_date %>,
-                  <%= booking.user.email %>,
-                  <%= booking.total_price %>
+                    <%= booking.end_date %>,
+                    <%= booking.user.email %>,
+                    <%= booking.total_price %>
+                    <%= booking.status %>
+                  <%= link_to 'Accept', confirm_booking_path(booking, status: 'accept'), method: :patch, action: :confirm_booking %>
+                  <%= link_to 'Reject', confirm_booking_path(booking, status: 'reject'), method: :patch, action: :confirm_booking %>
                   <br>
                 <%end %>
               <% end %>
@@ -39,6 +42,7 @@
             <%= booking.end_date %>
             <%= booking.user.email %>
             <%= booking.total_price %></p>
+            <%= booking.status %>
           </div>
         </div>
       <%end %>
